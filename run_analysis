@@ -35,6 +35,6 @@ names(TidyData)<-gsub("-std()","STD",names(TidyData),ignore.case = TRUE)
 names(TidyData)<-gsub("-freq()","Frequency",names(TidyData),ignore.case = TRUE)
 
 #creating the tidy data with all the information together
-Data<-TidyData %>% group_by(Subject,Activity) %>% summarise_all(list(mean=mean,median=median))
+Data<-TidyData %>% group_by(Subject,activity) %>% summarise_all(list(mean=mean,median=median))
 write.table(Data,"Data.txt",row.name = FALSE)
 str(Data)
